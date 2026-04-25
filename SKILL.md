@@ -93,6 +93,8 @@ Concrete substrate of the gaps:
 
 The cognitive load that makes research worthwhile — reading, thinking, planning — must not get crammed into snatched 30-min windows between meetings while we wait for the dashboard to refresh.
 
+**Caveat: parallel agents are not parallel compute.** Dispatching four CPU-heavy training jobs in parallel on 8 cores produces load 40+ and every job runs 5× slower, not 4× faster. Velocity comes from *bandwidth-aware* parallelism: queue training jobs (1–2 simultaneous on 8 cores), and fill the rest with low-CPU work — paper reading via subagents, synthesis, planning, writing specs. Reading agents do not contend for CPU; experiment-running agents do. The gap rule is "no idle compute," not "saturate every core."
+
 ## When to load which reference
 
 - **`references/two-tier-loop.md`** — when deciding whether this experiment is exploratory or confirmatory. Most of the day's work is exploratory; a small number of runs per week are confirmatory.
