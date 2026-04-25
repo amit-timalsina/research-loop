@@ -1,0 +1,26 @@
+{
+  "skill_name": "research-loop",
+  "evals": [
+    {
+      "id": 1,
+      "name": "ccr2-ablation-question",
+      "prompt": "We have three SAIL workcells (CCR2, X-Strand, Raw-Material) where the same composite features that lift CCR1 by +50% FQE are tanking these three by -7%, -15%, and -90% respectively. The naive next move is per-feature ablation. Help me think through whether that's the right experiment to run.",
+      "expected_output": "Should walk through the research loop: phrase the question honestly, identify candidate papers (Park 2024 policy extraction, Tarasov ReBRAC, Liu NeoRL-2), pre-register competing hypotheses (state vs reward vs saturation), name the editable surface, define the multi-lens decision rule. Should NOT just say 'yes, run the ablation.'",
+      "files": []
+    },
+    {
+      "id": 2,
+      "name": "single-seed-claim",
+      "prompt": "I just got SAC seed=42 to beat the IB benchmark at -226, vs the previous best of -436. Should we ship this?",
+      "expected_output": "Should refuse to ship on a single seed. Should reference the heavy-tailed seed distribution finding (range -226 to -2183), prescribe a 5-seed reproduction with IQM + bootstrap CIs, and explain why mean/median lie. Should treat this as exploratory result that requires confirmation.",
+      "files": []
+    },
+    {
+      "id": 3,
+      "name": "paper-question",
+      "prompt": "Read https://arxiv.org/abs/2108.13264 and tell me what to do next on our offline RL stack.",
+      "expected_output": "Should follow the literature protocol: extract the core claim (use IQM + stratified bootstrap, ~10 seeds), the falsifier, the prediction for our setup. Should produce a paper note. Should propose a concrete change (replace mean/median with IQM in our reporting) and write it as an experiment card if it's a confirmatory claim, or as an exploratory adjustment if not.",
+      "files": []
+    }
+  ]
+}
