@@ -1,6 +1,6 @@
 # Project bindings (template)
 
-Copy this file, rename to match your project (e.g. `acme-bindings.md`), and fill in your project's specifics. Then update `SKILL.md` to point at your bindings file instead of `uedc-bindings.md`.
+Copy this file, rename to match your project (e.g. `acme-bindings.md`), and fill in your project's specifics. Then update `SKILL.md` to point at your bindings file instead of `example-bindings.md`.
 
 The point of bindings: the generic skill is portable across projects. The bindings file makes it specific. It defines what "one experiment unit" is in your stack, what surfaces are locked, what surfaces are editable, and where things live.
 

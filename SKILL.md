@@ -73,7 +73,7 @@ These are not gated because they require taste. Get them wrong and the next expe
 These are Karpathy's principles, kept because they are correct.
 
 - **Delete > add.** A composite feature that doesn't move FQE > 0.5σ across the multi-lens panel — delete it. Removing a feature without losing performance is always a win.
-- **Fixed compute budget per run.** Comparable experiments require comparable cost. Pick one (UEDC: 5k IQL × 5 seeds × FQE) and freeze it. See `references/uedc-bindings.md`.
+- **Fixed compute budget per run.** Comparable experiments require comparable cost. Pick one (e.g. 5k IQL × 5 seeds × FQE) and freeze it. See your project's bindings file (worked example: `references/example-bindings.md`).
 - **One editable surface per experiment.** Lock everything else. Reviewable diffs.
 - **"FQE: n/a" is not a promotable state.** A policy with unresolved evaluation is a candidate, not a policy.
 
@@ -83,7 +83,7 @@ These are Karpathy's principles, kept because they are correct.
 - **`references/literature-protocol.md`** — when starting a paper note, evaluating whether a paper applies to our setup, or arguing whether a claim is well-supported.
 - **`references/pre-registration.md`** — when filling out an experiment card or deciding whether a deviation counts as a deviation.
 - **`references/eval-rigor.md`** — when running statistics: IQM, bootstrap CIs, power analysis, multiple-comparisons correction.
-- **`references/uedc-bindings.md`** — when running this in our specific stack. Defines our compute unit, locked surfaces, editable surfaces, and canonical paths to the eval harness, the spec.json, and the results ledger. **This is the one file to replace when porting the skill to another project.**
+- **`references/example-bindings.md`** (or your project's bindings file) — defines the compute unit, locked surfaces, editable surfaces, and canonical paths to the eval harness, the spec, and the results ledger. **Copy `references/bindings-template.md` and fill in your own; this is the one file to replace when porting the skill to another project.**
 
 ## Templates
 

@@ -8,7 +8,7 @@ Adapts [Karpathy's autoresearch](https://github.com/karpathy/autoresearch) philo
 
 Karpathy's autoresearch loop is great: agent reads code → forms hypothesis from its prior → 5-min train → keep/discard. It runs ~100 experiments overnight.
 
-The implicit assumption is that the agent's deep-learning literature prior is enough to generate good hypotheses. For our offline-RL stack at [Noumenal](https://noumenal.ai) it wasn't:
+The implicit assumption is that the agent's deep-learning literature prior is enough to generate good hypotheses. For our offline-RL stack it wasn't:
 
 - The agent's prior missed an action-leak in our state vector for weeks.
 - It missed a monotone-in-action reward that guaranteed policy saturation.
@@ -46,7 +46,7 @@ In a Claude Code session, the skill auto-triggers on relevant prompts. To force-
 
 ## Adapt to your stack
 
-The only project-specific file is [`references/uedc-bindings.md`](references/uedc-bindings.md) — it shows what "the locked surfaces, the editable surfaces, and the canonical paths" look like for our project (Noumenal's industrial-RL platform). Copy [`references/bindings-template.md`](references/bindings-template.md), fill in your own paths and unit definitions, and replace the UEDC binding with yours.
+The only project-specific file is [`references/example-bindings.md`](references/example-bindings.md) — a worked example showing what "the locked surfaces, the editable surfaces, and the canonical paths" look like for a real industrial-RL platform. Copy [`references/bindings-template.md`](references/bindings-template.md), fill in your own paths and unit definitions, and replace the example with yours.
 
 The other four reference files are generic:
 
@@ -66,7 +66,7 @@ research-loop/
 │   ├── pre-registration.md        The experiment-card discipline
 │   ├── eval-rigor.md              IQM + bootstrap + seeds + knob classification
 │   ├── bindings-template.md       Blank template for your project
-│   └── uedc-bindings.md           Worked example (Noumenal's offline-RL stack)
+│   └── example-bindings.md        Worked example bindings file
 ├── assets/
 │   ├── paper-note.md              Template
 │   ├── experiment-card.md         Template
@@ -108,4 +108,4 @@ MIT. See [LICENSE](LICENSE).
 
 ## Author
 
-[Amit Timalsina](https://github.com/amit-timalsina) — building [Noumenal](https://noumenal.ai), AI that runs operations.
+[Amit Timalsina](https://github.com/amit-timalsina)

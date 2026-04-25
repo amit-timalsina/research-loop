@@ -14,7 +14,7 @@ What experimental result would disprove the claim? If you can't write this in tw
 
 ## The prediction for our setup
 
-Given our pipeline (UEDC bindings: see skill `references/uedc-bindings.md`), what does this paper say should happen on which benchmark? Be specific. If the paper is silent on our setup, write that here.
+Given our pipeline (see your project's bindings file in `references/`), what does this paper say should happen on which benchmark? Be specific. If the paper is silent on our setup, write that here.
 
 ## The action
 

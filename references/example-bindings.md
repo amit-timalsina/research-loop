@@ -1,6 +1,6 @@
-# UEDC bindings
+# Bindings — worked example
 
-This file binds the generic research-loop methodology to our specific stack. Replace it for other projects; the rest of the skill is portable.
+This file is a worked example: bindings for an industrial offline-RL stack. It shows what "binding the generic research-loop methodology to a specific project" looks like in practice. Replace it for your own project; the rest of the skill is portable.
 
 ## Our compute unit
 
