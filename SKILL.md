@@ -77,6 +77,22 @@ These are Karpathy's principles, kept because they are correct.
 - **One editable surface per experiment.** Lock everything else. Reviewable diffs.
 - **"FQE: n/a" is not a promotable state.** A policy with unresolved evaluation is a candidate, not a policy.
 
+## Gap discipline (the velocity rule)
+
+Experiment-running time is reading and thinking time. Not idle time. This is what makes the loop fast despite each unit-experiment being slow.
+
+The unproductive antipattern: launch the run, refresh the dashboard, scroll, then maybe react when the run finishes. This is what makes RL research slow at most teams.
+
+The discipline: every overnight or long-running experiment launches with a written **gap plan** — at minimum two papers queued for parallel-subagent reading, and one thinking task (e.g. "draft three candidate confirmatory hypotheses from current evidence"). If a sprint ends with unread papers in the gap-plan queue, that's a planning failure, not a discipline failure.
+
+Concrete substrate of the gaps:
+
+- While the day's exploratory cards run overnight: read papers tied to the next confirmatory candidates; revise priors against partial results coming in.
+- While confirmatory runs execute: pre-write the ledger entries, especially the "prior that was wrong" field — it's the highest-leverage thinking task of the sprint.
+- Between sprint review and writing the next sprint: synthesize the reading-vs-results tensions ("paper P predicted X; our data showed Y — open question for next sprint").
+
+The cognitive load that makes research worthwhile — reading, thinking, planning — must not get crammed into snatched 30-min windows between meetings while we wait for the dashboard to refresh.
+
 ## When to load which reference
 
 - **`references/two-tier-loop.md`** — when deciding whether this experiment is exploratory or confirmatory. Most of the day's work is exploratory; a small number of runs per week are confirmatory.
