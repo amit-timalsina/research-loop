@@ -37,6 +37,20 @@ The absence of any of these is not disqualifying. It is a calibration on how muc
 
 Two to four. One paper makes a claim; you need at least one with an adjacent or contradicting view to triangulate. More than four and the exercise becomes literature review, which is a different mode and a different time-scale.
 
+## Parallel reading via subagents (velocity unlock)
+
+Reading 5 papers sequentially is ~10 hours. Reading 5 papers via 5 parallel subagents is ~45 minutes wall-clock. The wall-clock difference is the entire reason a 3-day research sprint is feasible at all.
+
+Each subagent prompt should include:
+
+- The paper's URL (arXiv preferred — the agent fetches and reads the actual paper, not a summary)
+- The relevant context from your bindings (so the agent can write the "prediction for our setup" field with specifics, not generics)
+- The paper-note template structure (so output is uniform and committable)
+
+The agent returns a one-page note. Review for accuracy — subagents over-summarize and under-engage with method/limits more than humans do; push back on superficial reads. Then commit. Treat the subagent's note as a first draft; if it doesn't help you make a card decision, dispatch a follow-up subagent to read the paper's discussion section and limitations specifically.
+
+This is the gap-discipline mechanism in operation: while one set of experiments runs, the next set's literature is being prepared in parallel. No wall-clock idleness.
+
 ## Where to find papers
 
 - Semantic Scholar (semanticscholar.org) — citations + influential-citation count
