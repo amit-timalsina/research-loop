@@ -97,6 +97,23 @@ The cognitive load that makes research worthwhile — reading, thinking, plannin
 
 **Caveat: agents that BOTH write multiple files AND verify them stall the watchdog.** Observed twice (Sprint 1 paper-reading subagents; Sprint 3 linter + PH-gate + paper-note subagents). The pattern: the agent writes substantial code + tests, then sits at "now run pytest" or "now read three more files to write a synthesis section" long enough that the 10-minute stream-watchdog kills it before output. The work done up to that point is preserved on disk; the verify-and-summarize step is what dies. Direct execution (write the code with the file tool, run tests with the shell tool, summarize inline) finishes in minutes when the agent stalls for 10+. Use agents for *single-purpose* low-bandwidth tasks (read one paper, write one note); use direct execution for *write-then-verify* cycles.
 
+## Operating cadence (sprints vs. continuous mode)
+
+The skill's templates use the language of sprints. Use sprints when working with humans on a shared cadence; use the continuous variant below when the agent's throughput is faster than a 3-day sprint can absorb.
+
+**Continuous research mode** (Model B):
+
+- No timeboxes as planning frame. Sprints become a retrospective concept ("here is what happened between dates A and B"), not a planning concept.
+- Maintain a research dependency graph (cards, hypotheses, paper notes, open questions). When a node lands, take the next-most-promising unblocked node automatically — no boundary required, no permission asked.
+- Pre-registration discipline still applies: every confirmatory experiment gets a card with hypothesis + decision rule + multi-lens panel before any compute. The card is the unit of work, not the sprint.
+- **Pause every 6 hours for user review.** That's the natural cadence for human-in-the-loop research review. Each pause produces: ledger deltas (Confirmed/Refuted/Partial counts), open decisions, recommended next branches. The user adjudicates branches the agent shouldn't decide alone.
+- Workstream limit is set by *user reviewability* per pause, not agent throughput. A typical 6-hour block produces ~5 substantive deliverables — that's the right batch size for a human reviewer.
+- All five gates from this skill still apply.
+
+The shift is small but load-bearing: planning discipline lives in pre-registration cards, not in sprint timeboxes. Sprints were a coordination protocol, not a research method.
+
+**When to switch back to sprint mode:** when working with multiple humans on a shared deadline (e.g., conference submission, customer pilot launch). The sprint metaphor's coordination value comes back at multi-agent or multi-stakeholder boundaries.
+
 ## When to load which reference
 
 - **`references/two-tier-loop.md`** — when deciding whether this experiment is exploratory or confirmatory. Most of the day's work is exploratory; a small number of runs per week are confirmatory.
