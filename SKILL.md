@@ -95,6 +95,8 @@ The cognitive load that makes research worthwhile — reading, thinking, plannin
 
 **Caveat: parallel agents are not parallel compute.** Dispatching four CPU-heavy training jobs in parallel on 8 cores produces load 40+ and every job runs 5× slower, not 4× faster. Velocity comes from *bandwidth-aware* parallelism: queue training jobs (1–2 simultaneous on 8 cores), and fill the rest with low-CPU work — paper reading via subagents, synthesis, planning, writing specs. Reading agents do not contend for CPU; experiment-running agents do. The gap rule is "no idle compute," not "saturate every core."
 
+**Caveat: agents that BOTH write multiple files AND verify them stall the watchdog.** Observed twice (Sprint 1 paper-reading subagents; Sprint 3 linter + PH-gate + paper-note subagents). The pattern: the agent writes substantial code + tests, then sits at "now run pytest" or "now read three more files to write a synthesis section" long enough that the 10-minute stream-watchdog kills it before output. The work done up to that point is preserved on disk; the verify-and-summarize step is what dies. Direct execution (write the code with the file tool, run tests with the shell tool, summarize inline) finishes in minutes when the agent stalls for 10+. Use agents for *single-purpose* low-bandwidth tasks (read one paper, write one note); use direct execution for *write-then-verify* cycles.
+
 ## When to load which reference
 
 - **`references/two-tier-loop.md`** — when deciding whether this experiment is exploratory or confirmatory. Most of the day's work is exploratory; a small number of runs per week are confirmatory.
