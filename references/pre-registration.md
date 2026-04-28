@@ -46,3 +46,17 @@ The "predicted outcome" field exists for a non-obvious reason: tracking calibrat
 ## What goes in the workspace
 
 Each experiment card is a markdown file in the experiments directory, named with a stable slug (e.g. `2026-04-26-ccr2-h1-feature-ablation.md`). Pre-commit it before launching seeds. The git history is the audit trail. If the card was modified after seeds launched, the reviewer will see it.
+
+## Sprint plans propose; prereg cards lock
+
+A sprint plan is a *proposal* for which experiments to run. The prereg card is the *commitment* — the falsifiable hypothesis that compute is about to test. These are different artifacts written at different times.
+
+The non-obvious case: **paper notes returning during the sprint can shift a prereg's prediction before any compute is burned.** This is the gates working as designed, not a deviation.
+
+Example (research-loop Sprint 4): the sprint plan proposed *"DR rescues ranking on CityLearn where FQE failed PH3."* A Voloshin 2019 paper-note subagent returned during Day 1 morning with the empirical regime map for OPE estimators — and predicted that DR would not rescue ranking on CL because the IS-correction adds noise to a non-separating estimator. The prereg card was then written *with the Voloshin-shifted prediction*, before any compute ran. The new card explicitly named "this re-scope is exactly the gate-2 deviation the skill prescribes: pre-registration written *after* paper grounding, not before."
+
+The rule: if a paper note arrives between sprint plan and compute, **update the prereg, not the paper note.** The "predicted outcome" field of the prereg card should reflect the paper grounding available at the time of compute, including any predictions that flipped between sprint planning and paper reading. The git history shows the audit trail: sprint plan committed first, paper note committed second, prereg card committed third with the paper-grounded prediction.
+
+Why this matters: a prereg's "predicted outcome" tracks calibration. If the prereg locked the sprint-plan's pre-paper-note prediction, the calibration audit becomes about how often you read papers carefully — uninteresting and noisy. If the prereg locks the post-paper-note prediction, the calibration audit becomes about whether the *literature's* predictions for our regime hold — informative and grounded.
+
+This is also the cleanest example of why sprint plans are not preregs: they're the proposal that gets refined by the literature before becoming a commitment.

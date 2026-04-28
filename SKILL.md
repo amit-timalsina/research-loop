@@ -36,6 +36,8 @@ Use `assets/experiment-card.md`. Hypothesis must be falsifiable: state direction
 
 Why: post-hoc reasoning will find a story for any result. Pre-registration is the commitment device. Deviations during the run get logged as exploratory, not silently incorporated into the conclusion. The pre-registration tradition (NeurIPS workshops, Lipton & Steinhardt 2018) exists because every other discipline has paid this price already.
 
+**Sprint plans propose; prereg cards lock.** A sprint plan is a *proposal*; the prereg card is the *commitment*. If a paper note returns during the sprint with a prediction that contradicts the sprint plan, the prereg card adjusts before any compute is burned — that's the gate working as designed, not a deviation. See `references/pre-registration.md` for the detailed protocol.
+
 ### Gate 3. n≥5 seeds, IQM with stratified bootstrap 95% CIs.
 
 5 is the floor. For "X beats Y" claims, run a pilot of 20 seeds first, then derive proper N from a power analysis (`references/eval-rigor.md`). Bootstrap requires n≥20 to be valid; for smaller N use Welch's t-test.
